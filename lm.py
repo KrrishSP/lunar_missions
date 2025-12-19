@@ -102,7 +102,8 @@ st.subheader('Mission data from the year 1958 to the future?')
 st.write('*Future lunar missions page coming soon!*')
 
 ### ---LOAD DATAFRAME HERE
-excel_file = r"C:\Users\91994\Downloads\lunar_missions(1).xlsx"
+excel_file = "data/lunar_missions(1).xlsx"
+
 sheet_name = 'lunar missions'
 
 df = pd.read_excel(excel_file, sheet_name=sheet_name, usecols='A:B', header=0)
@@ -212,8 +213,8 @@ outcome_selection = st.sidebar.multiselect(
 )
 
 # Optional: Launch Year filter
-if 'Launch date' in df.columns:
-    df['Launch Year'] = pd.to_datetime(df['Launch date'], errors='coerce').dt.year
+if 'Launch Date' in df.columns:
+    df['Launch Year'] = pd.to_datetime(df['Launch Date'], errors='coerce').dt.year
     year_selection = st.sidebar.slider(
         "Select Launch Year Range",
         int(df['Launch Year'].min()),
@@ -266,7 +267,8 @@ pie_chart = px.pie(
 
 st.plotly_chart(pie_chart, use_container_width=True)
 
-image = Image.open(r'C:\Users\91994\Downloads\lunar_missions.png')
+image = Image.open("assets/lunar_missions.png")
+
 st.image(image, width='content', caption='Moon soft landings')
 
 #-------------Interactive moon sphere test1
@@ -408,6 +410,7 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 #--------------------------------------------------------------3d moon render trial1
+
 
 
 
