@@ -186,7 +186,6 @@ outcome_bar = px.bar(
 st.plotly_chart(outcome_bar)
 
 #----------FILTER DATAFRAME
-##CHATGPT-------------------------------------------------------------
 
 st.sidebar.header("Filters")
 st.sidebar.subheader("*Note: select one or more of the available options in the given filters*")
@@ -239,10 +238,6 @@ st.markdown(f"**Available Results: {filtered_df.shape[0]}**")
 
 # Show filtered table
 st.dataframe(filtered_df)
-##CHATGPT ENDS--------------------------------------------------------------
-
-
-
 
 
 ###-------------
@@ -410,6 +405,7 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 #--------------------------------------------------------------3d moon render trial1
+
 
 
 
