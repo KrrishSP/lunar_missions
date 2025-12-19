@@ -29,7 +29,7 @@ st.title("Lunar Mission Payload Explorer")
 st.write("")
 
 # -------------------- LOAD EXCEL --------------------
-EXCEL_PATH = r"C:\Users\91994\Downloads\lunar_mission_payloads.xlsx"
+EXCEL_PATH = r"data/lunar_mission_payloads.xlsx"
 
 @st.cache_data
 def load_data(path):
@@ -95,6 +95,7 @@ st.dataframe(
 # -------------------- FOOTER --------------------
 st.markdown("---")
 st.caption("Lunar payload dataset")
+
 
 
 
