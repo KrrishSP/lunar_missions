@@ -6,6 +6,22 @@ from plotly.graph_objs.layout.scene.camera import Center
 
 st.set_page_config(page_title="Lunar missions", page_icon=":crescent_moon:")
 
+#-------------------------------for google analyics...
+GA_ID = "G-HRBHNW2DZJ"
+
+st.components.v1.html(
+    f"""
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', '{GA_ID}');
+    </script>
+    """,
+    height=0,
+)
+
 #THEME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 st.markdown("""
 <style>
@@ -407,6 +423,7 @@ fig.update_layout(
 st.plotly_chart(fig, width="content")
 
 #--------------------------------------------------------------3d moon render trial1
+
 
 
 
