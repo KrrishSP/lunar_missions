@@ -25,6 +25,22 @@ st.set_page_config(
     layout="wide"
 )
 
+#---------for google analytics,,,,
+GA_ID = "G-HRBHNW2DZJ"
+
+st.components.v1.html(
+    f"""
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', '{GA_ID}');
+    </script>
+    """,
+    height=0,
+)
+
 st.title("Lunar Mission Payload Explorer")
 st.write("")
 
@@ -95,6 +111,7 @@ st.dataframe(
 # -------------------- FOOTER --------------------
 st.markdown("---")
 st.caption("Lunar payload dataset")
+
 
 
 
