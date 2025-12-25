@@ -1,5 +1,20 @@
 import streamlit as st
 
+#for google anaylytics000000000000000
+GA_ID = "G-HRBHNW2DZJ"
+
+st.components.v1.html(
+    f"""
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', '{GA_ID}');
+    </script>
+    """,
+    height=0,
+)
 
 #Contact form
 with st.container():
@@ -88,3 +103,4 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
