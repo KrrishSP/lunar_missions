@@ -7,15 +7,23 @@ from plotly.graph_objs.layout.scene.camera import Center
 st.set_page_config(page_title="Lunar missions", page_icon=":crescent_moon:")
 
 #-------------------------------for google analyics...
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HRBHNW2DZJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+import streamlit as st
+import streamlit.components.v1 as components
 
-  gtag('config', 'G-HRBHNW2DZJ');
-</script>
+components.html(
+    """
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRBHNW2DZJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HRBHNW2DZJ');
+    </script>
+    """,
+    height=0,
+)
+
 
 #THEME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 st.markdown("""
@@ -418,6 +426,7 @@ fig.update_layout(
 st.plotly_chart(fig, width="content")
 
 #--------------------------------------------------------------3d moon render trial1
+
 
 
 
