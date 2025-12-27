@@ -26,15 +26,23 @@ st.set_page_config(
 )
 
 #---------for google analytics,,,,
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HRBHNW2DZJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+import streamlit as st
+import streamlit.components.v1 as components
 
-  gtag('config', 'G-HRBHNW2DZJ');
-</script>
+components.html(
+    """
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRBHNW2DZJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HRBHNW2DZJ');
+    </script>
+    """,
+    height=0,
+)
+
 #--------------------------------------------
 st.title("Lunar Mission Payload Explorer")
 st.write("")
@@ -106,6 +114,7 @@ st.dataframe(
 # -------------------- FOOTER --------------------
 st.markdown("---")
 st.caption("Lunar payload dataset")
+
 
 
 
