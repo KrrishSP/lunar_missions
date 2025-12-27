@@ -1,27 +1,24 @@
 import streamlit as st
 
 #for google anaylytics000000000000000
-GA_ID = "G-HRBHNW2DZJ"
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HRBHNW2DZJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-st.components.v1.html(
-    f"""
-    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){{dataLayer.push(arguments);}}
-      gtag('js', new Date());
-      gtag('config', '{GA_ID}');
-    </script>
-    """,
-    height=0,
-)
+  gtag('config', 'G-HRBHNW2DZJ');
+</script>
+#-----------------------------------
+
 
 #Contact form
 with st.container():
     st.container()
     st.write("---")
     st.header("Get In Contact with me!")
-
+#------------------------------------------------
 
 
 st.markdown(
@@ -103,4 +100,5 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
